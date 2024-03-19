@@ -98,14 +98,24 @@ public class TesteCampoTreinamento {
 	}
 	
 	@Test
-	@Ignore
 	public void deveInteragirComLinks() {
 		WebElement botao = driver.findElement(By.linkText("Voltar"));
 		botao.click();
+		String resultado = driver.findElement(By.id("resultado")).getText();
+		Assert.assertEquals("Voltou!", resultado);
+	}
+	
+	@Test
+	public void deveBuscarTextoNaPagina() {
+		Assert.assertEquals("Campo de Treinamento",
+				driver.findElement(By.tagName("h3")).getText());
+		
+		Assert.assertEquals("Cuidado onde clica, muitas armadilhas...", 
+				driver.findElement(By.className("facilAchar")).getText());
 	}
 	
 	
-	
+	//32. Elementos básicos: Div e Span
 	
 
 //	@AfterClass
