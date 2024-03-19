@@ -89,6 +89,13 @@ public class TesteCampoTreinamento {
 		Assert.assertEquals(2, selecao.size());
 	}
 	
+	@Test
+	public void deveInteragirComBotoes() {
+		WebElement botao = driver.findElement(By.id("buttonSimple"));
+		botao.click();
+		Assert.assertEquals("Obrigado!", botao.getAttribute("value"));
+	}
+	
 	
 	
 	
