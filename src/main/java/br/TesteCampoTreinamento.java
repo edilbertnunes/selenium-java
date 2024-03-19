@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.junit.Assert;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -96,7 +97,12 @@ public class TesteCampoTreinamento {
 		Assert.assertEquals("Obrigado!", botao.getAttribute("value"));
 	}
 	
-	
+	@Test
+	@Ignore
+	public void deveInteragirComLinks() {
+		WebElement botao = driver.findElement(By.linkText("Voltar"));
+		botao.click();
+	}
 	
 	
 	
