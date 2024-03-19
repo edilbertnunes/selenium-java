@@ -2,9 +2,9 @@ package br;
 
 import java.util.List;
 
+import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -114,13 +114,9 @@ public class TesteCampoTreinamento {
 				driver.findElement(By.className("facilAchar")).getText());
 	}
 	
-	
-	//32. Elementos básicos: Div e Span
-	
-
-//	@AfterClass
-//	public static void fechar() {
-//		WebDriverConfig.quitDriver();
-//	}
+	@AfterClass
+	public static void fechar() {
+		WebDriverConfig.quitDriver();
+	}
 
 }
