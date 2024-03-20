@@ -6,6 +6,7 @@ import org.junit.Test;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class TestAlert {
 
@@ -25,9 +26,26 @@ public class TestAlert {
 		alert.accept();
 		
 		driver.findElement(By.id("elementosForm:nome")).sendKeys(texto);
-
-		
 	}
+	
+	@Test
+	public void deveInterAlertConfirm() {
+		driver.findElement(By.id("confirm")).click();
+		Alert alerta = driver.switchTo().alert();
+		Assert.assertEquals("Confirm Simples", alerta.getText());
+		alerta.accept();
+		Assert.assertEquals("Confirmado", alerta.getText());
+		alerta.accept();
+		
+		driver.findElement(By.id("confirm")).click();
+		alerta = driver.switchTo().alert();
+		Assert.assertEquals("Confirm Simples", alerta.getText());
+		alerta.dismiss();
+		Assert.assertEquals("Negado", alerta.getText());
+		alerta.dismiss();	
+	}
+	
+
 	
 //	@AfterClass
 //	public static void fechar() {
