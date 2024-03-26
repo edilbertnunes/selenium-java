@@ -1,4 +1,4 @@
-package br;
+package br.webdriver;
 
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;

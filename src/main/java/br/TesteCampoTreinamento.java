@@ -11,6 +11,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
+import br.webdriver.WebDriverConfig;
+
 public class TesteCampoTreinamento {
 
 	private static WebDriver driver;

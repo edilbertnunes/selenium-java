@@ -6,7 +6,9 @@ import org.junit.Test;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+
+import br.webdriver.WebDriverConfig;
+
 
 public class TestAlert {
 
@@ -44,6 +46,23 @@ public class TestAlert {
 		Assert.assertEquals("Negado", alerta.getText());
 		alerta.dismiss();	
 	}
+	
+	@Test
+	public void deveInteragirComAlertPrompt() {
+		driver.findElement(By.id("prompt")).click();
+		Alert alerta = driver.switchTo().alert();
+		Assert.assertEquals("Digite um numero", alerta.getText());
+		alerta.sendKeys("12");
+		alerta.accept();
+		Assert.assertEquals("Era 12?", alerta.getText());
+		alerta.accept();
+		Assert.assertEquals(":D", alerta.getText());
+		alerta.accept();
+	}
+	
+	
+	
+	
 	
 
 	
